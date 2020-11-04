@@ -5,8 +5,8 @@ import { fetchRepos } from '../../actions/repoActions';
 import RepoDetail from './RepoDetail';
 
 const RepoList = () => {
-  const repos = useSelector(state => state.repos.list);
-  const loading = useSelector(state => state.repos.loading);
+  const repos = useSelector(state => state.list);
+  const loading = useSelector(state => state.loading);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const RepoList = () => {
   ));
 
   return (
-    <ul>
+    <ul data-testid="repos">
       {repoElements}
     </ul>
   );
