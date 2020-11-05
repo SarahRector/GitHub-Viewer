@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component renders Form 1`] = `
+<DocumentFragment>
+  <label
+    for="userLookup"
+  >
+    User Lookup
+  </label>
+  <input
+    id="userLookup"
+    name="userLookup"
+    type="text"
+  />
+  <button>
+    Search!
+  </button>
+</DocumentFragment>
+`;
