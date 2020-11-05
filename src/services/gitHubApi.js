@@ -1,20 +1,20 @@
-export const getRepos = (username) => {
-  return fetch(`https://api.github.com/users/${username}/repos`)
+export const getRepos = (userName) => {
+  return fetch(`https://api.github.com/users/${userName}/repos`)
     .then(res => res.json())
-    .then(json => json.results.map(repo => ({
+    .then(json => json.map(repo => ({
       id: repo.id,
       name: repo.name,
       url: repo.url
     })));
 };
 
-export const getUserProfile = (username) => {
-  return fetch(`https://api.github.com/users/${username}`)
+export const getUserProfile = (userName) => {
+  return fetch(`https://api.github.com/users/${userName}`)
     .then(res => res.json())
-    .then(json => json.results.map(userProfile => ({
-      name: userProfile.name,
-      followers: userProfile.followers,
-      following: userProfile.following,
-      profile: userProfile.html_url
-    })));
+    .then(json => ({
+      name: json.name,
+      followers: json.followers,
+      following: json.following,
+      profile: json.html_url
+    }));
 };

@@ -18,16 +18,22 @@ export const setProfile = profiles => ({
   payload: profiles
 });
 
-export const fetchRepos = () => dispatch => {
-  getRepos()
+export const SET_LOOKUP = 'SET_LOOKUP';
+export const setLookup = lookups => ({
+  type: SET_LOOKUP,
+  payload: lookups
+});
+
+export const fetchRepos = (userName) => dispatch => {
+  getRepos(userName)
     .then(repos => {
       dispatch(setRepos(repos));
     })
     .finally(() => dispatch(setLoading(false)));
 };
 
-export const fetchProfile = () => dispatch => {
-  getUserProfile()
+export const fetchProfile = (userName) => dispatch => {
+  getUserProfile(userName)
     .then(profiles => {
       dispatch(setProfile(profiles));
     })
