@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component renders RepoDetail 1`] = `
+<DocumentFragment>
+  <div>
+    <h1>
+      test repo
+    </h1>
+    <p>
+      test.com
+    </p>
+  </div>
+</DocumentFragment>
+`;
